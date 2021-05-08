@@ -1,6 +1,6 @@
 import styles from "./AppLayout.module.scss";
 
-import { Col, Container, Row } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import Sidebar from "./Sidebar";
 
 const AppLayout = ({ children }) => {
@@ -11,7 +11,9 @@ const AppLayout = ({ children }) => {
           <Sidebar />
         </div>
 
-        <Col className="col py-3">{children}</Col>
+        <div className="col py-3">
+            {children}
+        </div>
       </Row>
     </Container>
   );
