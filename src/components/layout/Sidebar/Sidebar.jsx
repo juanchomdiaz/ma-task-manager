@@ -29,8 +29,8 @@ const Sidebar = () => {
         </div>
         <div className={styles.sidebarMenu}> 
           <ul className="nav d-flex flex-column align-items-center align-items-sm-start">
-            <li className={`nav-link ${asPath === "/" ? styles.active : ""}`}>
-              <Link href="/"> 
+            <li className={`nav-link ${asPath === "/inicio" ? styles.active : ""}`}>
+              <Link href="/inicio"> 
                 <a>
                   <HomeIcon />
                   <span className="d-none d-sm-inline">Inicio</span>
