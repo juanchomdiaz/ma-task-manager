@@ -1,11 +1,13 @@
 {
   "name": "ma-task-manager",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "jest",
+    "testwatch": "jest --watchAll"
   },
   "dependencies": {
     "bootstrap": "^5.0.0",
@@ -16,7 +18,15 @@
     "sass": "^1.32.12"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "babel-jest": "^24.5.0",
     "babel-plugin-inline-react-svg": "^2.0.1",
-    "babel-plugin-module-resolver": "^4.1.0"
+    "babel-plugin-module-resolver": "^4.1.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-17-updated": "^1.0.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.5.0",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^16.8.4"
   }
 }
