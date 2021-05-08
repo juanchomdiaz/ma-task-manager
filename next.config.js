@@ -6,4 +6,13 @@ module.exports = {
     includePaths: ["./src"],
     prependData: `@import "~@styles/variables.scss";`,
   },
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/inicio',
+        permanent: false,
+      },
+    ];
+  }
 };
