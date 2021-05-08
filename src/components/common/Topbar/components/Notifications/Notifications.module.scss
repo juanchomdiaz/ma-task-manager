@@ -1,0 +1,31 @@
+.notificationsWrapper {
+  position: relative;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    fill: $topbar-icon-color;
+  }
+
+  .countBadge {
+    font-weight: 600;
+    background-color: $topbar-notification-badge-bg;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    padding: 0px;
+    border: 2px solid white;
+    font-size: 10px;
+    font-style: normal;
+    color: white;
+    text-align: center;
+  }
+
+  &:hover {
+      cursor: pointer;
+  }
+}

@@ -1,0 +1,11 @@
+.searchWrapper {
+    &:hover {
+        cursor: pointer;
+    }
+    
+    svg {
+        width: 24px;
+        height: 24px;
+        stroke: $topbar-icon-color;
+    }
+}

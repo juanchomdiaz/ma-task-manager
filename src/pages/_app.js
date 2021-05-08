@@ -4,7 +4,7 @@ import AppLayout from "@components/layout/AppLayout";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import "../styles/globals.css";
+import "../styles/globals.scss";
 
 function MyApp({ Component, pageProps }) {
   return (
