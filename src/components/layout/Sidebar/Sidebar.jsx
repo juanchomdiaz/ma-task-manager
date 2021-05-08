@@ -29,7 +29,7 @@ const Sidebar = () => {
         </div>
         <div className={styles.sidebarMenu}> 
           <ul className="nav d-flex flex-column align-items-center align-items-sm-start">
-            <li className={`nav-link ${asPath === "/" ? "active" : ""}`}>
+            <li className={`nav-link ${asPath === "/" ? styles.active : ""}`}>
               <Link href="/"> 
                 <a>
                   <HomeIcon />
@@ -38,7 +38,7 @@ const Sidebar = () => {
               </Link>
             </li>
             <li
-              className={`nav-link ${asPath === "/usuarios" ? "active" : ""}`}
+              className={`nav-link ${asPath === "/usuarios" ? styles.active : ""}`}
             >
               <Link href="/usuarios">
                 <a>
@@ -47,7 +47,7 @@ const Sidebar = () => {
                 </a>
               </Link>
             </li>
-            <li className={`nav-link ${asPath === "/tareas" ? "active" : ""}`}>
+            <li className={`nav-link ${asPath === "/tareas" ? styles.active : ""}`}>
               <Link href="/tareas">
                 <a>
                   <TasksIcon />
@@ -57,7 +57,7 @@ const Sidebar = () => {
             </li>
             <li
               className={`nav-link ${
-                asPath === "/configuracion" ? "active" : ""
+                asPath === "/configuracion" ? styles.active : ""
               }`}
             >
               <Link href="/configuracion">

@@ -1,56 +1,107 @@
 .sidebarTop {
-    background-color: $sidebar-top-bg;
-    min-height: 80px;
-    max-height: 80px;
-    height: 80px;
-    padding: 23px 31px 23px 31px;
+  background-color: $sidebar-top-bg;
+  min-height: 80px;
+  max-height: 80px;
+  height: 80px;
+  padding: 23px 31px 23px 31px;
 
-    a {
-        .logo {
-            width: 34px;
-            height: auto;
-        }
-
-        .brandName {
-            font-family: $main-font-family;
-            font-size: 19px;
-            font-weight: 700;
-            margin-left: 11px;
-            padding-top: 4px;
-        }
+  a {
+    .logo {
+      width: 34px;
+      height: auto;
     }
 
+    .brandName {
+      font-family: $main-font-family;
+      font-size: 19px;
+      font-weight: 700;
+      margin-left: 11px;
+      padding-top: 4px;
+    }
+  }
 }
 
 .sidebarMenu {
-    ul {
-        li {
-            min-height: 56px;
-            max-height: 56px;
-            height: 56px;
-            padding: 21px 32px;
+  ul {
+    li {
+      min-height: 56px;
+      max-height: 56px;
+      height: 56px;
+      padding: 15px 28px;
+      width: 100%;
+
+      svg {
+        width: 16px;
+        height: 16px;
+        fill: $sidebar-icon-color;
+
+        @media (max-width: 575.98px) {
+          transform: scale(2);
+          -webkit-transform: scale(2);
+          -moz-transform: scale(2);
+          -ms-transform: scale(2);
+          -o-transform: scale(2);
+        }
+      }
+
+      span {
+        font-family: $main-font-family;
+        font-weight: 400;
+        font-size: 16px;
+        margin-left: 24px;
+        color: $sidebar-item-color;
+        vertical-align: text-top;
+
+        @media (max-width: 767.98px) {
+          font-size: 14px;
+        }
+      }
+
+      &:last-of-type {
+        position: absolute;
+        bottom: 0;
+        padding-top: 32px;
+        height: 88px;
+        min-height: 88px;
+        max-height: 88px;
+        width: 255px;
+        border-top: 1px solid $sidebar-divider-color;
+
+        @media (max-width: 767.98px) {
+          width: 220px;
+        }
+
+        @media (max-width: 575.98px) {
+          position: relative;
+          border-top: none;
+          width: auto;
+          padding-top: 15px;
+        }
+      }
+
+      &.active {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        border-left: 3px solid $sidebar-item-color-active;
+        background: $sidebar-item-bg-active;
+
+        a {
+            margin-left: -3px;
 
             svg {
-                width: 16px;
-                height: 16px;
-                fill: $sidebar-icon-color;
-
-                @media (max-width: 575.98px) {
-                    transform:scale(2.0); 
-                    -webkit-transform:scale(2.0); 
-                    -moz-transform:scale(2.0); 
-                    -ms-transform:scale(2.0); 
-                    -o-transform:scale(2.0);
-                }
+                fill: $sidebar-icon-color-active;
             }
 
             span {
-                font-family: $main-font-family;
-                font-weight: 400;
-                font-size: 16px;
-                margin-left: 24px;
-                color: $sidebar-item-color;
+                color: $sidebar-item-color-active;
             }
         }
+      }
+
+      @media (max-width: 575.98px) {
+        text-align: center;
+      }
     }
+  }
 }
