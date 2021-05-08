@@ -4,14 +4,14 @@
     background-color: $sidebar-bg;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767.98px) {
     .sidebarWrapper {
         -ms-flex: 0 0 200px;
         flex: 0 0 200px;
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 575.98px) {
     .sidebarWrapper {
         -ms-flex: 0 0 80px;
         flex: 0 0 80px;

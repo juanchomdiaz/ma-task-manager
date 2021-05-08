@@ -1,45 +1,71 @@
+import Link from "next/link";
+import { useRouter } from "next/router";
+
+import HomeIcon from "@svgs/icons/HomeIcon.svg";
+import UsersIcon from "@svgs/icons/UsersIcon.svg";
+import TasksIcon from "@svgs/icons/TasksIcon.svg";
+import SettingsIcon from "@svgs/icons/SettingsIcon.svg";
+
 import styles from "./Sidebar.module.scss";
 
 const Sidebar = () => {
+  const { asPath } = useRouter();
+
   return (
     <>
       <div className="d-flex flex-column min-vh-100">
         <div className={styles.sidebarTop}>
-          <a href="/" className="d-flex text-white text-decoration-none">
-            <img src="images/logo.jpg" className={`${styles.logo} rounded-circle`} />
-            <span className={`${styles.brandName} d-none d-sm-inline`}>Mi Águila</span>
-          </a>
+          <Link href="/">
+            <a className="d-flex text-white text-decoration-none">
+              <img
+                src="images/logo.jpg"
+                className={`${styles.logo} rounded-circle`}
+              />
+              <span className={`${styles.brandName} d-none d-sm-inline`}>
+                Mi Águila
+              </span>
+            </a>
+          </Link>
         </div>
-        <div className="sidebarMenu">
-          <ul className="nav nav-pills flex-column">
-            <li className="nav-item">
-              <a href="#" className="nav-link align-middle px-0">
-                <i className="fs-4 bi-house"></i>
-                <span className="ms-1 d-none d-sm-inline">Inicio</span>
-              </a>
+        <div className={styles.sidebarMenu}> 
+          <ul className="nav d-flex flex-column align-items-center align-items-sm-start">
+            <li className={`nav-link ${asPath === "/" ? "active" : ""}`}>
+              <Link href="/"> 
+                <a>
+                  <HomeIcon />
+                  <span className="d-none d-sm-inline">Inicio</span>
+                </a>
+              </Link>
             </li>
-
-            <li>
-              <a href="#" className="nav-link px-0 align-middle">
-                <i className="fs-4 bi-table"></i>
-                <span className="ms-1 d-none d-sm-inline">Usuarios</span>
-              </a>
+            <li
+              className={`nav-link ${asPath === "/usuarios" ? "active" : ""}`}
+            >
+              <Link href="/usuarios">
+                <a>
+                  <UsersIcon />
+                  <span className="d-none d-sm-inline">Usuarios</span>
+                </a>
+              </Link>
             </li>
-
-            <li>
-              <a href="#" className="nav-link px-0 align-middle">
-                <i className="fs-4 bi-people"></i>
-                <span className="ms-1 d-none d-sm-inline">Tareas</span>
-              </a>
+            <li className={`nav-link ${asPath === "/tareas" ? "active" : ""}`}>
+              <Link href="/tareas">
+                <a>
+                  <TasksIcon />
+                  <span className="d-none d-sm-inline">Tareas</span>
+                </a>
+              </Link>
             </li>
-          </ul>
-
-          <ul className="nav nav-pills position-absolute bottom-0 d-flex flex-column">
-            <li>
-              <a href="#" className="nav-link px-0 align-middle">
-                <i className="fs-4 bi-cog"></i>
-                <span className="ms-1 d-none d-sm-inline">Configuración</span>
-              </a>
+            <li
+              className={`nav-link ${
+                asPath === "/configuracion" ? "active" : ""
+              }`}
+            >
+              <Link href="/configuracion">
+                <a>
+                  <SettingsIcon />
+                  <span className="d-none d-sm-inline">Configuración</span>
+                </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -49,5 +75,3 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
-
-
