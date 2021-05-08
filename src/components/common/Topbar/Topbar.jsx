@@ -1,14 +1,24 @@
-import styles from './Topbar.module.scss';
+import Search from "./components/Search";
+import Notifications from "./components/Notifications";
+import LoggedInUser from "./components/LoggedInUser";
+
+import styles from "./Topbar.module.scss";
 
 const Topbar = ({ pageTitle }) => {
   return (
-    <div class="d-flex">
-      <div class="p-2 flex-grow-1">
+    <div className="d-flex">
+      <div className="p-2 flex-grow-1">
         <h1>{pageTitle}</h1>
       </div>
-      <div class="p-2">Search</div>
-      <div class="p-2">Notifications</div>
-      <div class="p-2">Logged in user</div>
+      <div className="p-2">
+        <Search />
+      </div>
+      <div className="p-2">
+        <Notifications />
+      </div>
+      <div className="p-2">
+        <LoggedInUser />
+      </div>
     </div>
   );
 };
