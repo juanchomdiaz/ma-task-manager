@@ -1,0 +1,19 @@
+.sidebarWrapper {
+    -ms-flex: 0 0 255px;
+    flex: 0 0 255px;
+    background-color: $sidebar-bg;
+}
+
+@media (max-width: 768px) {
+    .sidebarWrapper {
+        -ms-flex: 0 0 200px;
+        flex: 0 0 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebarWrapper {
+        -ms-flex: 0 0 80px;
+        flex: 0 0 80px;
+    }
+}
