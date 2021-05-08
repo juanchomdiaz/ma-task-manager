@@ -1,0 +1,23 @@
+.sidebarTop {
+    background-color: $sidebar-top-bg;
+    min-height: 80px;
+    max-height: 80px;
+    height: 80px;
+    padding: 23px 31px 23px 31px;
+
+    a {
+        .logo {
+            width: 34px;
+            height: auto;
+        }
+
+        .brandName {
+            font-family: Montserrat;
+            font-size: 19px;
+            font-weight: 700;
+            margin-left: 11px;
+            padding-top: 4px;
+        }
+    }
+
+}
