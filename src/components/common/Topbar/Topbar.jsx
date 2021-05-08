@@ -1,3 +1,5 @@
+import styles from './Topbar.module.scss';
+
 const Topbar = ({ pageTitle }) => {
   return (
     <div class="d-flex">

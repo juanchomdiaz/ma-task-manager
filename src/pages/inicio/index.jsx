@@ -8,6 +8,7 @@ export default function Inicio() {
       <Head>
         <title>Inicio</title>
       </Head>
+      
       <Topbar pageTitle="Inicio" />
     </>
   );
