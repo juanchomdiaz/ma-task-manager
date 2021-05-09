@@ -1,8 +1,10 @@
 import { getSession } from 'next-auth/client';
 
+import LoginForm from '@components/common/form/LoginForm';
+
 import { Card, Col, Container, Row } from 'react-bootstrap';
 
-export default function IniciarSesion({ csrfToken }) {
+export default function IniciarSesion() {
   return (
     <Container>
       <Row>
@@ -12,7 +14,7 @@ export default function IniciarSesion({ csrfToken }) {
               Iniciar Sesión
             </Card.Header>
             <Card.Body>
-              <FormLogin />
+              <LoginForm />
             </Card.Body>
           </Card>
         </Col>
@@ -27,12 +29,9 @@ export async function getServerSideProps(context) {
   if (session) {
     context.res.writeHead(302, { Location: '/' });
     context.res.end();
-    return { props: {} };
   }
 
   return {
-    props: {
-      csrfToken: await getCsrfToken(context),
-    },
+    props: {},
   };
 }
