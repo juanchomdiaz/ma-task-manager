@@ -5,7 +5,6 @@ import Head from 'next/head';
 import AppLayout from '@components/layout/AppLayout';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import '../styles/globals.scss';
 
 function MyApp({ Component, pageProps }) {
@@ -22,7 +21,7 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
 
-      <Provider options={{}} session={pageProps.session}>
+      <Provider session={pageProps.session}>
         <AppLayout>
           <Component {...pageProps} />
         </AppLayout>

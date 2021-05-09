@@ -1,5 +1,5 @@
-import NextAuth from "next-auth"
-import Providers from "next-auth/providers"
+import NextAuth from 'next-auth';
+import Providers from 'next-auth/providers';
 
 // For more information on each option (and a full list of options) go to
 // https://next-auth.js.org/configuration/options
@@ -9,26 +9,31 @@ export default NextAuth({
     Providers.Credentials({
       name: 'Credentials',
       credentials: {
-        username: { label: "Username", type: "text", placeholder: "jsmith" },
-        password: {  label: "Password", type: "password" }
+        username: { label: 'Username', type: 'text', placeholder: 'jsmith' },
+        password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials) {
-        const user = { id: 1, name: 'Jones Ferdinand', email: 'jferdinand@example.com', image: 'https://randomuser.me/api/portraits/men/3.jpg' }
-  
+        const user = {
+          id: 'a3ab5e8c-3c22-46b2-807f-18804037d484',
+          name: 'Jones Ferdinand',
+          email: 'jferdinand@example.com',
+          image: 'https://randomuser.me/api/portraits/men/3.jpg',
+        };
+
         if (user) {
           // Any object returned will be saved in `user` property of the JWT
-          return user
+          return user;
         } else {
           // If you return null or false then the credentials will be rejected
-          return null
+          return null;
         }
-      }
-    })
+      },
+    }),
   ],
   secret: process.env.SECRET,
   session: {
     jwt: true,
-    maxAge: 5 * 60, // 5 minutes
+    maxAge: 60 * 60, // 1 hour
   },
   pages: {
     // signIn: '/auth/signin',  // Displays signin buttons
@@ -54,4 +59,4 @@ export default NextAuth({
 
   // Enable debug messages in the console if you are having problems
   debug: false,
-})
+});

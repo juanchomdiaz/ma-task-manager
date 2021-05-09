@@ -1,6 +1,6 @@
-import Head from "next/head";
+import Head from 'next/head';
 
-import Topbar from "@components/layout/Topbar";
+import Topbar from '@components/layout/Topbar';
 
 export default function Inicio() {
   return (

@@ -1,12 +1,26 @@
 import styles from './LoggedInUser.module.scss';
 
+import { signIn, signOut, useSession } from 'next-auth/client';
+
 const LoggedInUser = () => {
-    return ( 
+
+  const [ session, loading ] = useSession()
+
+  return (
+    <>
+      {session && (
         <div className={styles.loggedInUserWrapper}>
-            <span className="d-none d-md-inline-block">Jones Ferdinand</span>
-            <img src="https://randomuser.me/api/portraits/men/3.jpg" className="img-thumbnail rounded-circle" alt="jones ferdinand" />
+          <span className="d-none d-md-inline-block">{session.user.name}</span>
+          <img
+            src={session.user.image}
+            className="img-thumbnail rounded-circle"
+            alt={session.user.name}
+          />
         </div>
-    );
-    }
- 
+      )}
+      {!session && <button onClick={(e) => {e.preventDefault(); signIn();}}>Login</button>}
+    </>
+  );
+};
+
 export default LoggedInUser;
