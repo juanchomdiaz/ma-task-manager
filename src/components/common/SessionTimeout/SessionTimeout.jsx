@@ -1,4 +1,4 @@
-import useSessionTimeout from '@hooks/useSessionTimeout';
+import useSessionTimeout from '@hooks/Session/useSessionTimeout';
 import AlertModal from './components/AlertModal';
 
 const SessionTimeout = () => {
