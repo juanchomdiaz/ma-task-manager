@@ -4,8 +4,14 @@
 ## How to run
 
 
+
+## Note for npm v7 users
+Enzyme's dependencies have not yet been updated to declare React 17 in peerDependencies. You need to add --legacy-peer-deps to the install command for it to work correctly.
+
 ## How to test
 
 
+## Git workflow
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Here you can find explained the flow followed in this repo:
+https://www.atlassian.com/es/git/tutorials/comparing-workflows/gitflow-workflow
