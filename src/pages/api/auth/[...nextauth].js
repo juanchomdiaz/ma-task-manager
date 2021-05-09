@@ -33,7 +33,7 @@ export default NextAuth({
   secret: process.env.SECRET,
   session: {
     jwt: true,
-    maxAge: 60 * 60, // 1 hour
+    maxAge: 30 * 24 * 60 * 60, // 30 days
   },
   pages: {
     // signIn: '/auth/signin',  // Displays signin buttons

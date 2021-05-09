@@ -4,7 +4,7 @@ import { signIn, signOut, useSession } from 'next-auth/client';
 
 const LoggedInUser = () => {
 
-  const [ session, loading ] = useSession()
+  const [ session, loading ] = useSession();
 
   return (
     <>
