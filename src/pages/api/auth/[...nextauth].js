@@ -36,7 +36,7 @@ export default NextAuth({
     maxAge: 30 * 24 * 60 * 60, // 30 days
   },
   pages: {
-    // signIn: '/auth/signin',  // Displays signin buttons
+    signIn: '/auth/iniciar-sesion', 
     // signOut: '/auth/signout', // Displays form with sign out button
     // error: '/auth/error', // Error code passed in query string as ?error=
     // verifyRequest: '/auth/verify-request', // Used for check email page
