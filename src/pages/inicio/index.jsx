@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import Topbar from "@components/common/Topbar";
+import Topbar from "@components/layout/Topbar";
 
 export default function Inicio() {
   return (
@@ -8,7 +8,7 @@ export default function Inicio() {
       <Head>
         <title>Inicio</title>
       </Head>
-      
+
       <Topbar pageTitle="Inicio" />
     </>
   );
