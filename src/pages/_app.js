@@ -1,10 +1,12 @@
-import Head from "next/head";
+import { Provider } from 'next-auth/client';
 
-import AppLayout from "@components/layout/AppLayout";
+import Head from 'next/head';
 
-import "bootstrap/dist/css/bootstrap.min.css";
+import AppLayout from '@components/layout/AppLayout';
 
-import "../styles/globals.scss";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import '../styles/globals.scss';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -20,9 +22,11 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
 
-      <AppLayout>
-        <Component {...pageProps} />
-      </AppLayout>
+      <Provider options={{}} session={pageProps.session}>
+        <AppLayout>
+          <Component {...pageProps} />
+        </AppLayout>
+      </Provider>
     </>
   );
 }
