@@ -5,8 +5,8 @@ import { useIdleTimer } from 'react-idle-timer';
 const useSessionTimeout = () => {
   const [session, loading] = useSession();
 
-  const timeout = 1000 * 60 * 1;
-  const timeoutAlert = 1000 * 30;
+  const timeout = 1000 * 60 * 5;
+  const timeoutAlert = 1000 * 60;
 
   const [remaining, setRemaining] = useState(timeout);
 
@@ -52,7 +52,7 @@ const useSessionTimeout = () => {
       setShowModal(true);
     }
 
-    console.log(Math.round(remaining / 1000) + ' segs');
+    //console.log(Math.round(remaining / 1000) + ' segs');
   }, [remaining]);
 
   return { handleReset, remaining, showModal };
