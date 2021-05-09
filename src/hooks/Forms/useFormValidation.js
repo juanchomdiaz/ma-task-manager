@@ -12,6 +12,8 @@ import { useState, useEffect } from 'react';
 const useFormValidation = (initialValues, validationSchema, submitCallback) => {
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
 
   const validateSchema = () => {
     let validationErrors = {};
@@ -38,12 +40,13 @@ const useFormValidation = (initialValues, validationSchema, submitCallback) => {
   };
 
   useEffect(() => {
-    if (Object.keys(errors).length === 0) submitCallback();
+    if (Object.keys(errors).length === 0 && isSubmitting) submitCallback();
   }, [errors]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     event.stopPropagation();
+    setIsSubmitting(true);
     setErrors(validateSchema());
   };
 

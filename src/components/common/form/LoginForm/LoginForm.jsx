@@ -26,7 +26,10 @@ const LoginForm = () => {
           name="username"
           autoComplete="username"
           onChange={handleChange} 
-          value={values.username || ''} 
+          value={values.username || ''}
+          className={`form-control ${
+            errors.username ? "is-invalid" : ""
+            }`} 
           required
         />
         <Form.Control.Feedback type="invalid">{errors.username}</Form.Control.Feedback>
