@@ -6,7 +6,7 @@ const AlertModal = ({ show, countDown, handler }) => {
       <Modal.Header>
         <Modal.Title>¿Sigues con nosotros?</Modal.Title>
       </Modal.Header>
-      <Modal.Body>Su sesión finalizará automáticamente en {countDown} segs.</Modal.Body>
+      <Modal.Body>Su sesión finalizará automáticamente en {countDown} segs. Por favor, confírmanos que estas ahí para continuar navegando.</Modal.Body>
       <Modal.Footer>
         <Button variant="primary" onClick={handler}>
           ¡Estoy aquí!

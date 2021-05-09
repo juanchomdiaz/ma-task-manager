@@ -10,6 +10,7 @@ const useSessionTimeout = () => {
 
   const [remaining, setRemaining] = useState(timeout);
 
+  // TO-DO: read this from sessionStorage to provide cross-tab compatibility
   const [showModal, setShowModal] = useState(false);
 
   const [timer, setTimer] = useState();
@@ -19,7 +20,7 @@ const useSessionTimeout = () => {
 
   const { start, reset, getRemainingTime } = useIdleTimer({
     timeout: timeout,
-    events: [],
+    events: [], /* User events can be provided here to prevent idle when interaction occurs */
     onIdle: handleOnIdle,
     onActive: handleOnActive,
     crossTab: true,
