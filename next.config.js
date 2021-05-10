@@ -26,4 +26,8 @@ module.exports = {
   publicRuntimeConfig: {
     apiBaseUrl: s3.apiBaseUrl || process.env.NEXT_PUBLIC_API_BASE_URL,
   },
+  serverRuntimeConfig: {
+    nextAuthUrl: s3.nextAuthUrl || process.env.NEXTAUTH_URL,
+    nextAuthSecret: s3.nextAuthSecret || process.env.NEXTAUTH_SECRET
+  }
 };

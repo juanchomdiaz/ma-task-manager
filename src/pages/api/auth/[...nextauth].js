@@ -1,6 +1,12 @@
 import NextAuth from 'next-auth';
 import Providers from 'next-auth/providers';
 
+import getConfig from 'next/config';
+
+let {
+  serverRuntimeConfig: { nextAuthSecret },
+} = getConfig();
+
 // For more information on each option (and a full list of options) go to
 // https://next-auth.js.org/configuration/options
 export default NextAuth({
@@ -30,7 +36,7 @@ export default NextAuth({
       },
     }),
   ],
-  secret: process.env.SECRET,
+  secret: nextAuthSecret,
   session: {
     jwt: true,
     maxAge: 30 * 24 * 60 * 60, // 30 days
