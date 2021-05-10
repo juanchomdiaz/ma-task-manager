@@ -1,0 +1,80 @@
+ [{
+    "id": "1", 
+    "names": "Harry",
+    "surnames": "Potter",
+    "phone": "555-2842",
+    "email": "email@example.com",
+    "state": true
+  },
+  {
+      "id": "2", 
+    "names": "Maggie",
+    "surnames": "McFly", 
+    "phone": "585-4812",
+        "email": "email@example.com",
+            "state": true
+  },
+  {
+      "id": "3", 
+    "names": "George",
+        "surnames": "McFly", 
+    "phone": "558-2342",
+        "email": "email@example.com",
+            "state": true
+  },
+  {
+      "id": "4", 
+    "names": "Hermione",
+            "surnames": "Granger", 
+    "phone": "455-0842",
+        "email": "email@example.com",
+            "state": true
+  },
+    {
+        "id": "5", 
+    "names": "Marty",
+        "surnames": "McFly", 
+    "phone": "555-1942",
+        "email": "email@example.com",
+            "state": true
+  },
+  {
+      "id": "6", 
+    "names": "Emmet Lathrop",
+        "surnames": "Brown", 
+    "phone": "565-0802",
+        "email": "email@example.com",
+            "state": true
+  },
+  {
+      "id": "7", 
+    "names": "Buford",
+            "surnames": "Tannen", 
+    "phone": "355-9841",
+        "email": "email@example.com",
+            "state": true
+  },
+  {
+      "id": "8", 
+    "names": "Biff",
+                "surnames": "Tannen", 
+    "phone": "555-2741",
+        "email": "email@example.com",
+            "state": true
+  },
+  {
+      "id": "9", 
+    "names": "Seamus",
+            "surnames": "McFly", 
+    "phone": "555-0892",
+        "email": "email@example.com",
+            "state": true
+  },
+  {
+      "id": "10", 
+    "names": "Clara",
+            "surnames": "Cleyton", 
+    "phone": "595-3546",
+        "email": "email@example.com",
+            "state": true
+  }]
