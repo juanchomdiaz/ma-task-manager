@@ -5,13 +5,14 @@ import { v4 as uuidv4 } from 'uuid';
 import TasksContext from './TasksContext';
 import TasksReducer from './TasksReducer';
 
-import { TASKS_CHANGED } from './TasksTypes';
+import { TASKS_CHANGED, SELECTED_TASK_CHANGED } from './TasksTypes';
 
 import PropTypes from 'prop-types';
 
 const TasksState = ({ children }) => {
   const initialState = {
     tasks: [],
+    selectedTask: {},
   };
 
   const [state, dispatch] = useReducer(TasksReducer, initialState);
@@ -35,8 +36,6 @@ const TasksState = ({ children }) => {
   };
 
   const deleteTask = (taskId) => {
-    if (!taskId) return;
-
     let tasks = state.tasks.filter((tsk) => tsk.id !== taskId);
 
     dispatch({
@@ -48,8 +47,6 @@ const TasksState = ({ children }) => {
   };
 
   const switchStateTask = (taskId) => {
-    if (!taskId) return;
-
     let task = state.tasks.find((t) => t.id === taskId);
     task.state = !task.state;
 
@@ -63,6 +60,17 @@ const TasksState = ({ children }) => {
     });
   };
 
+  const setSelectedTask = (taskId) => {
+    let task = state.tasks.find((tsk => tsk.id === taskId));
+
+    dispatch({
+      type: SELECTED_TASK_CHANGED,
+      payload: {
+        selectedTask: task,
+      },
+    });
+  };
+
   return (
     <TasksContext.Provider
       value={{
@@ -71,6 +79,7 @@ const TasksState = ({ children }) => {
         addTask,
         deleteTask,
         switchStateTask,
+        setSelectedTask,
       }}
     >
       {children}
