@@ -3,6 +3,7 @@ import { getSession } from 'next-auth/client';
 import Head from "next/head";
 
 import Topbar from "@components/layout/Topbar";
+import TasksMain from '@components/views/tasks/TasksMain';
 
 export default function Tareas() {
   return (
@@ -12,6 +13,7 @@ export default function Tareas() {
       </Head>
 
       <Topbar pageTitle="Tareas" />
+      <TasksMain />
     </>
   );
 }

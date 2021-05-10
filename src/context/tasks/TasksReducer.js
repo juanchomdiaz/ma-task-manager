@@ -1,13 +1,13 @@
 import {
-
+    TASKS_CHANGED
   } from './TasksTypes';
   
   const TasksReducer = (state, action) => {
     switch (action.type) {
-      case LOAD_USERS_START:
+      case TASKS_CHANGED:
         return {
           ...state,
-          isReady: false,
+          tasks: action.payload.tasks,
         };
       default:
         return state;
