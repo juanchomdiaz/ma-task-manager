@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { useSession, getSession } from 'next-auth/client';
 
 import Topbar from '@components/layout/Topbar';
+import HomeMain from '@components/views/home/HomeMain';
 
 export default function Inicio() {
 
@@ -14,7 +15,7 @@ export default function Inicio() {
       </Head>
 
       <Topbar pageTitle="Inicio" />
-      
+      <HomeMain />
     </>
   );
 }

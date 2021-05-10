@@ -1,0 +1,11 @@
+.homeIllustration {
+    img {
+        max-width: 500px;
+        max-height: 500px;
+
+        @media (max-width: 575.98px) {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}

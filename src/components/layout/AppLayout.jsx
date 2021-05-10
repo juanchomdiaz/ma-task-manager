@@ -2,7 +2,7 @@ import { useSession } from 'next-auth/client';
 
 import styles from './AppLayout.module.scss';
 
-import { Container, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import Sidebar from './Sidebar';
 
 const AppLayout = ({ children }) => {
@@ -12,12 +12,12 @@ const AppLayout = ({ children }) => {
     <Container fluid>
       <Row className="flex-nowrap">
         {session && (
-          <div className={`${styles.sidebarWrapper} px-0`}>
+          <div className={`${styles.sidebarWrapper} d-flex flex-column px-0`}>
             <Sidebar />
           </div>
         )}
 
-        <div className="col py-3 vh-100">{children}</div>
+        <Col className={`${styles.contentWrapper} d-flex flex-column`}>{children}</Col>
       </Row>
     </Container>
   );
