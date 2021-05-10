@@ -6,7 +6,7 @@ import styles from "./Topbar.module.scss";
 
 const Topbar = ({ pageTitle }) => {
   return (
-    <div className={`${styles.topbarWrapper} d-flex`}>
+    <div className={`${styles.topbarWrapper} d-flex py-3`}>
       <div className="p-2 flex-grow-1">
         <h1>{pageTitle}</h1>
       </div>
