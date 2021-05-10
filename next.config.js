@@ -6,7 +6,7 @@ let s3 = new aws.S3({
   nextAuthSecret: process.env.NEXTAUTH_SECRET
 });
 
-process.env.NEXTAUTH_URL = s3.nextAuthUrl || process.env.NEXTAUTH_URL;
+process.env.NEXTAUTH_URL = 'https://jmd-ma-task-manager.herokuapp.com';
 
 module.exports = {
   future: {
