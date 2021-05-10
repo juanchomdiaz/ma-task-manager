@@ -2,7 +2,7 @@
 
 A simple task manager with authentication and gracefully session timeout handling, made with NextJS 10, ReactJs 17, hooks, Context API, NextAuth, react-bootstrap, and jest + enzyme.
 
-See it running live in Heroku: https://jmd-ma-task-manager.herokuapp.com/
+See it running live in Vercel: https://ma-task-manager-28srgype3-juanchomdiaz.vercel.app/
 ## How to run
 
 npm install
