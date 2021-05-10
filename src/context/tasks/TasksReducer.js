@@ -1,4 +1,4 @@
-import { TASKS_CHANGED, SELECTED_TASK_CHANGED } from './TasksTypes';
+import { TASKS_CHANGED, EDITING_TASK_START, EDITING_TASK_CANCELLED, EDITING_TASK_FINISHED } from './TasksTypes';
 
 const TasksReducer = (state, action) => {
   switch (action.type) {
@@ -7,10 +7,18 @@ const TasksReducer = (state, action) => {
         ...state,
         tasks: action.payload.tasks,
       };
-    case SELECTED_TASK_CHANGED:
+    case EDITING_TASK_START:
       return {
         ...state,
         selectedTask: action.payload.selectedTask,
+        isEditingTask: action.payload.isEditingTask,
+      };
+    case EDITING_TASK_CANCELLED:
+    case EDITING_TASK_FINISHED:
+      return {
+        ...state,
+        selectedTask: action.payload.selectedTask,
+        isEditingTask: action.payload.isEditingTask,
       };
     default:
       return state;

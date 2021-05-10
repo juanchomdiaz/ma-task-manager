@@ -5,7 +5,7 @@ import { Button, Table } from 'react-bootstrap';
 import ConfirmModal from '@components/common/ConfirmModal/ConfirmModal';
 
 const TasksList = () => {
-  const { tasks, editTask, deleteTask, switchStateTask, setSelectedTask } = useContext(
+  const { tasks, editTask, deleteTask, switchStateTask } = useContext(
     TasksContext
   );
 
@@ -22,12 +22,11 @@ const TasksList = () => {
     );
   };
 
-  const handleEditClick = (e) => {
-    editTask();
+  const handleEditClick = (taskId) => {
+    editTask(taskId);
   };
 
   const handleDeleteClick = (taskId) => {
-      console.log("click")
     showModal(() => deleteTask(taskId));
     setShowConfirmation(true);
   };
@@ -64,7 +63,12 @@ const TasksList = () => {
                   >
                     {task.state ? 'finalizado' : 'pendiente'}
                   </span>
-                  <Button variant="primary" size="sm" className="shadow-none me-2 mb-md-0 mb-2">
+                  <Button
+                    variant="primary"
+                    size="sm"
+                    className="shadow-none me-2 mb-md-0 mb-2"
+                    onClick={() => handleEditClick(task.id)}
+                  >
                     Editar
                   </Button>
                   <Button
