@@ -53,9 +53,14 @@ const useFormValidation = (initialValues, validationSchema, submitCallback) => {
   const handleChange = (event) => {
     event.persist();
     setValues((values) => ({ ...values, [event.target.name]: event.target.value }));
+    setIsSubmitting(false);
   };
 
-  return { handleChange, handleSubmit, values, errors };
+  const handleOnBlur = (event) => {
+    setErrors(validateSchema());
+  }
+
+  return { handleChange, handleOnBlur, handleSubmit, values, errors };
 };
 
 export default useFormValidation;

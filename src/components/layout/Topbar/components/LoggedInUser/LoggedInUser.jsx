@@ -1,10 +1,10 @@
 import styles from './LoggedInUser.module.scss';
 
-import { signIn, signOut, useSession } from 'next-auth/client';
+import { useSession } from 'next-auth/client';
 
 const LoggedInUser = () => {
 
-  const [ session, loading ] = useSession();
+  const [ session ] = useSession();
 
   return (
     <>
@@ -18,7 +18,6 @@ const LoggedInUser = () => {
           />
         </div>
       )}
-      {!session && <button onClick={(e) => {e.preventDefault(); signIn();}}>Login</button>}
     </>
   );
 };
