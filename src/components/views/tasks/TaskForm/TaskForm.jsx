@@ -8,13 +8,13 @@ const TaskForm = () => {
 
   const [task, setTask] = useState('');
 
-  const handleClick = (e) => {
-    addTask(task);
-    setTask('');
+  const handleChange = e => {
+    setTask(e.target.value);
   };
 
-  const handleChange = (e) => {
-    setTask(e.target.value);
+  const handleAddClick = e => {
+    addTask(task);
+    setTask('');
   };
 
   return (
@@ -31,7 +31,7 @@ const TaskForm = () => {
         <Button
           variant="outline-primary"
           className="shadow-none"
-          onClick={handleClick}
+          onClick={handleAddClick}
           disabled={task.length === 0}
         >
           Agregar

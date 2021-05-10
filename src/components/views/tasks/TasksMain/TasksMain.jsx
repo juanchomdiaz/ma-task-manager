@@ -12,7 +12,7 @@ const TasksMain = () => {
                     <TaskForm />
                 </Col>
             </Row>
-            <Row>
+            <Row className="mt-3">
                 <Col>
                     <TasksList />
                 </Col>
