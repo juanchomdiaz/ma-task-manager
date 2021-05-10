@@ -6,6 +6,8 @@ let s3 = new aws.S3({
   nextAuthSecret: process.env.NEXTAUTH_SECRET
 });
 
+process.env.NEXTAUTH_URL = s3.nextAuthUrl || process.env.NEXTAUTH_URL;
+
 module.exports = {
   future: {
     webpack5: true,
