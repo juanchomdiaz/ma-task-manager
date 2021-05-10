@@ -1,5 +1,7 @@
 import React, { useReducer } from "react";
 
+import { v4 as uuidv4 } from 'uuid';
+
 import TasksContext from "./TasksContext";
 import TasksReducer from "./TasksReducer";
 
@@ -17,7 +19,13 @@ const TasksState = ({ children }) => {
   const [state, dispatch] = useReducer(TasksReducer, initialState);
 
   const addTask = (task) => {
-    let tasks = [...state.tasks, task];
+    let newTaskId = uuidv4();
+    let taskObj = {
+        id: newTaskId,
+        name: task
+    }  
+
+    let tasks = [...state.tasks, taskObj];
 
     dispatch({
         type: TASKS_CHANGED,
