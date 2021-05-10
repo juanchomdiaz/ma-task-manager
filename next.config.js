@@ -1,3 +1,11 @@
+const aws = require('aws-sdk');
+
+let s3 = new aws.S3({
+  apiBaseUrl: process.env.NEXT_PUBLIC_API_BASE_URL,
+  nextAuthUrl: process.env.NEXTAUTH_URL,
+  nextAuthSecret: process.env.NEXTAUTH_SECRET
+});
+
 module.exports = {
   future: {
     webpack5: true,
@@ -14,5 +22,8 @@ module.exports = {
         permanent: false,
       },
     ];
-  }
+  },
+  publicRuntimeConfig: {
+    apiBaseUrl: s3.apiBaseUrl || process.env.NEXT_PUBLIC_API_BASE_URL,
+  },
 };
