@@ -1,37 +1,34 @@
 import { Table } from 'react-bootstrap';
 
-const UsersTable = () => {
+import PropTypes from 'prop-types';
+
+const UsersTable = ({ users }) => {
   return (
     <Table responsive striped bordered hover>
       <thead>
         <tr>
-          <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
+          <th>Nombre completo</th>
+          <th>Teléfono</th>
+          <th>Correo Electrónico</th>
+          <th>Estado</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td colSpan="2">Larry the Bird</td>
-          <td>@twitter</td>
-        </tr>
+        {users.map((user) => (
+          <tr key={user.id}>
+            <td>{user.names + ' ' + user.surnames}</td>
+            <td>{user.phone}</td>
+            <td>{user.email}</td>
+            <td>{user.state ? 'Online' : 'Offline'}</td>
+          </tr>
+        ))}
       </tbody>
     </Table>
   );
+};
+
+UsersTable.propTypes = {
+  users: PropTypes.array.isRequired,
 };
 
 export default UsersTable;

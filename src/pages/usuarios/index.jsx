@@ -17,7 +17,7 @@ export default function Usuarios({users, withError}) {
 
       <Topbar pageTitle="Usuarios" />
 
-      {withError ? <ErrorMessage /> : <UsersMain {...users} />}      
+      {withError ? <ErrorMessage /> : <UsersMain users={users} />}      
     </>
   );
 }
