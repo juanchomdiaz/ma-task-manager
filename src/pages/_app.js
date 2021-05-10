@@ -2,11 +2,13 @@ import { Provider } from 'next-auth/client';
 
 import Head from 'next/head';
 
+import TasksState from '@context/tasks/TasksState';
+
 import AppLayout from '@components/layout/AppLayout';
+import SessionTimeout from '@components/common/SessionTimeout/SessionTimeout';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/globals.scss';
-import SessionTimeout from '@components/common/SessionTimeout/SessionTimeout';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -21,12 +23,14 @@ function MyApp({ Component, pageProps }) {
           rel="stylesheet"
         />
       </Head>
-      
+
       <Provider session={pageProps.session}>
-        <AppLayout>
-          <SessionTimeout />
-          <Component {...pageProps} />
-        </AppLayout>
+        <TasksState>
+          <AppLayout>
+            <SessionTimeout />
+            <Component {...pageProps} />
+          </AppLayout>
+        </TasksState>
       </Provider>
     </>
   );
